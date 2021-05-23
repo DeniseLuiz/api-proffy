@@ -40,13 +40,11 @@ namespace ProffyApi.Services
         public Proffy GetProffyId(int id)
         {
             return _proffyContext.Proffys.FirstOrDefault(x => x.Id == id);
-         
         }
 
         public List<Proffy> GetProffys()
         {
             return _proffyContext.Proffys.ToList();
-
         }
 
         public Proffy UpdateProffy(Proffy proffy)
