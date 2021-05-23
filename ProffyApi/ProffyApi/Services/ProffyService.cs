@@ -15,6 +15,7 @@ namespace ProffyApi.Services
         {
             _proffyContext = proffyContext;
         }
+
         public Proffy AddProffy(Proffy proffy)
         {
             _proffyContext.Proffys.Add(proffy);
@@ -34,22 +35,25 @@ namespace ProffyApi.Services
             }
 
             return $"Proffy com id {id} não encontrado";
-
         }
 
         public Proffy GetProffyId(int id)
         {
-            throw new NotImplementedException();
+            return _proffyContext.Proffys.FirstOrDefault(x => x.Id == id);
+         
         }
 
         public List<Proffy> GetProffys()
         {
-            throw new NotImplementedException();
+            return _proffyContext.Proffys.ToList();
+
         }
 
         public Proffy UpdateProffy(Proffy proffy)
         {
-            throw new NotImplementedException();
+            _proffyContext.Proffys.Update(proffy);
+            _proffyContext.SaveChanges();
+            return proffy;
         }
     }
 }
