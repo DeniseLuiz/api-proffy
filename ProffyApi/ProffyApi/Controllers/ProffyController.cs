@@ -22,38 +22,38 @@ namespace ProffyApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Proffy> GetProffys()
+        public IEnumerable<Proffy> Get()
         {
-            return _proffyService.GetProffys();
+            return _proffyService.Get();
         }
 
         [HttpGet]
         [Route("/{id}")]
-        public IActionResult GetProffyId(int id)
+        public IActionResult GetId(int id)
         {
-            _proffyService.GetProffyId(id);
+            _proffyService.GetId(id);
 
             return Ok();
         }
 
         [HttpPost]
-        public IActionResult InsertProffy(Proffy proffy)
+        public IActionResult Insert(Proffy proffy)
         {
-            _proffyService.AddProffy(proffy);
+            _proffyService.Add(proffy);
             return Created("Proffy adicionado com sucesso", proffy);
         }
 
         [HttpPatch]
-        public IActionResult UpdateProffy(Proffy proffy)
+        public IActionResult Update(Proffy proffy)
         {
-            _proffyService.UpdateProffy(proffy);
+            _proffyService.Update(proffy);
             return Ok(proffy);
         }
 
         [HttpDelete]
-        public IActionResult DeleteProffy(int id)
+        public IActionResult Delete(int id)
         {
-            _proffyService.DeleteProffy(id);
+            _proffyService.Delete(id);
             return Ok("Proffy deletado com sucesso.");
         }
     }

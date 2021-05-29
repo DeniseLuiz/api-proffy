@@ -16,14 +16,14 @@ namespace ProffyApi.Services
             _proffyContext = proffyContext;
         }
 
-        public Proffy AddProffy(Proffy proffy)
+        public Proffy Add(Proffy proffy)
         {
             _proffyContext.Proffys.Add(proffy);
             _proffyContext.SaveChanges();
             return proffy;
         }
 
-        public string DeleteProffy(int id)
+        public string Delete(int id)
         {
             var proffy = _proffyContext.Proffys.FirstOrDefault(x => x.Id == id);
 
@@ -37,17 +37,17 @@ namespace ProffyApi.Services
             return $"Proffy com id {id} não encontrado";
         }
 
-        public Proffy GetProffyId(int id)
+        public Proffy GetId(int id)
         {
             return _proffyContext.Proffys.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<Proffy> GetProffys()
+        public List<Proffy> Get()
         {
             return _proffyContext.Proffys.ToList();
         }
 
-        public Proffy UpdateProffy(Proffy proffy)
+        public Proffy Update(Proffy proffy)
         {
             _proffyContext.Proffys.Update(proffy);
             _proffyContext.SaveChanges();

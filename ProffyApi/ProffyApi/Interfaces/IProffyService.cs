@@ -8,15 +8,15 @@ namespace ProffyApi.Interfaces
 {
     public interface IProffyService
     {
-        Proffy AddProffy(Proffy proffy);
+        Proffy Add(Proffy proffy);
 
-        List<Proffy> GetProffys();
+        List<Proffy> Get();
 
-        Proffy GetProffyId(int id);
+        Proffy GetId(int id);
 
-        string DeleteProffy(int id);
+        string Delete(int id);
 
-        Proffy UpdateProffy(Proffy proffy);
+        Proffy Update(Proffy proffy);
 
     }
 }
